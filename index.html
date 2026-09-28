@@ -21,12 +21,12 @@
     <div id="debug">Initializing...</div>
     <iframe id="iframe" src=""></iframe>
 
-    <script>
+    <!-- Use type="module" so imports work -->
+    <script type="module">
         // 1. Config
         self.__uv$config = {
             prefix: '/static/tiw/',
-            // Use a more reliable bare server if benrogo.net is blocked
-            bare: 'https://bare-server.pages.dev', 
+            bare: 'https://bare-server.pages.dev', // Changed to a more reliable server
             encodeUrl: Ultraviolet.codec.xor.encode,
             decodeUrl: Ultraviolet.codec.xor.decode,
             handler: '/static/uv/uv.handler.js',
