@@ -21,12 +21,11 @@
     <div id="debug">Initializing...</div>
     <iframe id="iframe" src=""></iframe>
 
-    <!-- Use type="module" so imports work -->
     <script type="module">
         // 1. Config
         self.__uv$config = {
             prefix: '/static/tiw/',
-            bare: 'https://bare-server.pages.dev', // Changed to a more reliable server
+            bare: 'https://bare-server.pages.dev',
             encodeUrl: Ultraviolet.codec.xor.encode,
             decodeUrl: Ultraviolet.codec.xor.decode,
             handler: '/static/uv/uv.handler.js',
@@ -41,16 +40,12 @@
             console.log(msg);
         };
 
-        // 2. Load Scripts
+        // 2. Load Scripts (Only the necessary ones)
         (async () => {
             try {
                 log('Loading uv.bundle.js...');
                 await import('/static/uv/uv.bundle.js');
                 log('uv.bundle.js loaded.');
-
-                log('Loading uv.client.js...');
-                await import('/static/uv/uv.client.js');
-                log('uv.client.js loaded.');
 
                 log('Loading uv.handler.js...');
                 await import('/static/uv/uv.handler.js');
