@@ -11,5 +11,21 @@
 <body>
   <h1>Redirecting...</h1>
   <p>If you are not redirected, <a href="/static/">click here</a>.</p>
+  <script>
+    window.__uv$config = {
+        prefix: '/uv/',
+        encodeUrl: Ultraviolet.codec.base64.encode,
+        decodeUrl: Ultraviolet.codec.base64.decode,
+        handler: '/uv/uv.handler.js',
+        client: '/uv/uv.client.js',
+        bundle: '/uv/uv.bundle.js',
+        config: '/uv/uv.config.js',
+        sw: '/uv/uv.sw.js',
+    };
+</script>
+<script src="/uv/uv.bundle.js"></script>
+<script src="/uv/uv.config.js"></script>
+<script src="/uv/uv.client.js"></script>
+<script src="/uv/uv.sw.js"></script>
 </body>
 </html>
